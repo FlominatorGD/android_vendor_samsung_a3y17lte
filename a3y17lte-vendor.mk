@@ -44,7 +44,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a3y17lte/proprietary/vendor/lib64/nfc_nci_sec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/nfc_nci_sec.so
 
 # Bluetooth - from A320FLXXS9CTK2
-PRODUCT_COPY_FILES += \
+ PRODUCT_COPY_FILES += \
     vendor/samsung/a3y17lte/proprietary/lib/libantradio.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libantradio.so \
     vendor/samsung/a3y17lte/proprietary/lib/com.qualcomm.qti.ant@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib/com.qualcomm.qti.ant@1.0.so \
     vendor/samsung/a3y17lte/proprietary/lib/vendor.samsung.hardware.bluetooth@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib/vendor.samsung.hardware.bluetooth@1.0.so \
@@ -56,7 +56,11 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a3y17lte/proprietary/vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so \
     vendor/samsung/a3y17lte/proprietary/vendor/lib64/hw/android.hardware.bluetooth@1.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.bluetooth@1.0-impl.so
 
-#
+# Bluetooth android.hardware.bluetooth@1.0-service-qti - from A320FLXXS9CTK2
+PRODUCT_COPY_FILES += \
+		vendor/samsung/a3y17lte/proprietary/vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.bluetooth@1.0-service-qti.rc \
+		vendor/samsung/a3y17lte/proprietary/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.bluetooth@1.0-service-qti
+
 # Camera - from A320FLXXS9CTK2
 # camera.vendor.universal7870.so was taken directly from /system/lib/hw/camera.exynos7870.so
 PRODUCT_COPY_FILES += \
@@ -76,6 +80,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/samsung/a3y17lte/proprietary/vendor/lib/egl/libGLES_mali.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLES_mali.so \
     vendor/samsung/a3y17lte/proprietary/vendor/lib64/egl/libGLES_mali.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLES_mali.so
+
+# libacryl from a20cs-user 9 PPR1.180610.011 A205WVLU3ASK2
+PRODUCT_COPY_FILES += \
+    vendor/samsung/a3y17lte/proprietary/vendor/lib/libacryl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libacryl.so \
+    vendor/samsung/a3y17lte/proprietary/vendor/lib64/libacryl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libacryl.so
 
 # OMX - from A520FXXUGCTI9
 PRODUCT_COPY_FILES += \
@@ -103,10 +112,12 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a3y17lte/proprietary/lib64/omx/libOMX.Exynos.WMV.Decoder.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/omx/libOMX.Exynos.WMV.Decoder.so
 
 # DRM - from "crosshatch-user 11 RQ1A.201205.003 6906706 release-keys"
+# PRODUCT_COPY_FILES += \
+#    vendor/samsung/a3y17lte/proprietary/vendor/lib64/libwvhidl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwvhidl.so \
+#    vendor/samsung/a3y17lte/proprietary/vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.3-service.widevine.rc \
+#    vendor/samsung/a3y17lte/proprietary/vendor/bin/hw/android.hardware.drm@1.3-service.widevine:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.drm@1.3-service.widevine
 PRODUCT_COPY_FILES += \
-    vendor/samsung/a3y17lte/proprietary/vendor/lib64/libwvhidl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwvhidl.so \
-    vendor/samsung/a3y17lte/proprietary/vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.3-service.widevine.rc \
-    vendor/samsung/a3y17lte/proprietary/vendor/bin/hw/android.hardware.drm@1.3-service.widevine:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.drm@1.3-service.widevine
+		vendor/samsung/a3y17lte/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:$(TARGET_COPY_OUT_VENDOR)/lib/mediadrm/libwvdrmengine.so
 
 # aptX - from "crosshatch-user 11 RQ1A.201205.003 6906706 release-keys"
 PRODUCT_COPY_FILES += \
@@ -114,8 +125,8 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a3y17lte/proprietary/system_ext/lib64/libaptXHD_encoder.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libaptXHD_encoder.so
 
 # Widevine L1 certification
-PRODUCT_COPY_FILES += \
-    vendor/samsung/a3y17lte/proprietary/vendor/lib/liboemcrypto.so:$(TARGET_COPY_OUT_VENDOR)/lib/liboemcrypto.so \
+# PRODUCT_COPY_FILES += \
+#    vendor/samsung/a3y17lte/proprietary/vendor/lib/liboemcrypto.so:$(TARGET_COPY_OUT_VENDOR)/lib/liboemcrypto.so \
 
 # Tfa Audio amplifier from m10lte
 PRODUCT_COPY_FILES += \
@@ -210,6 +221,11 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a3y17lte/proprietary/vendor/lib/libfloatingfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib/libfloatingfeature.so \
     vendor/samsung/a3y17lte/proprietary/vendor/lib64/libfloatingfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libfloatingfeature.so
 
+# More RIL from M305FDDU2BSH3 (needed for dual sim)
+# PRODUCT_COPY_FILES += \
+# vendor/samsung/a3y17lte/proprietary/lib/libsec-ril-dsds.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libsec-ril-dsds.so \
+# vendor/samsung/a3y17lte/proprietary/_ril/lib64:$(TARGET_COPY_OUT_SYSTEM)/lib64/libsec-ril-dsds.so
+
 # CP boot daemon - From old universal7870 vendor (works just fine)
 PRODUCT_COPY_FILES += \
     vendor/samsung/a3y17lte/proprietary/vendor/bin/cbd:$(TARGET_COPY_OUT_VENDOR)/bin/cbd
@@ -222,15 +238,19 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/a3y17lte/proprietary/vendor/etc/gnss/ca.pem:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/ca.pem
 
 # libsecnativefeature - from M305FDDU2BSH3
-PRODUCT_COPY_FILES += \
-    vendor/samsung/a3y17lte/proprietary/vendor/lib64/libsecnativefeature.so:$(TARGET_COPY_OUT_VENDOR)/vendor/lib64/libsecnativefeature.so \
-    vendor/samsung/a3y17lte/proprietary/vendor/lib/libsecnativefeature.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsecnativefeature.so
+# PRODUCT_COPY_FILES += \
+#    vendor/samsung/a3y17lte/proprietary/vendor/lib64/libsecnativefeature.so:$(TARGET_COPY_OUT_VENDOR)/vendor/lib64/libsecnativefeature.so \
+#    vendor/samsung/a3y17lte/proprietary/vendor/lib/libsecnativefeature.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsecnativefeature.so
 
-# Sensors - from A320FLXXS9CTK2
+# Sensors - from old 7870 a3y17lte vendor
 PRODUCT_COPY_FILES += \
     vendor/samsung/a3y17lte/proprietary/_sensors/lib/hw/sensors.universal7870.so:$(TARGET_COPY_OUT_SYSTEM)/lib/hw/sensors.universal7870.so
 
-# Samsung stock audio
+# Sensor-service from old 7870 common vendor
+PRODUCT_COPY_FILES += \
+		vendor/samsung/a3y17lte/proprietary/_sensors/bin/hw/android.hardware.sensors@1.0-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.sensors@1.0-service
+
+# Samsung stock audio (maybe???) audio.primary.universal7870.so from old vendor (7870 common) rest unkown
 PRODUCT_COPY_FILES += \
     vendor/samsung/a3y17lte/proprietary/_audio/hw/audio.primary.universal7870.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/audio.primary.universal7870.so \
     vendor/samsung/a3y17lte/proprietary/_audio/lib_SamsungRec_06004.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib_SamsungRec_06004.so \
